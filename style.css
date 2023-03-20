@@ -1,0 +1,266 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Mukta', sans-serif;
+    font-size: 12pt;
+    color: white;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #181a1b;
+}
+.default-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* headers */
+
+header{
+    flex-direction: column;
+    width: 100%;
+    height: 180px;
+}
+#main-header{
+    width: 100%;
+    height: 85%;
+    background-color: rgb(5, 109, 235);
+}
+#banner-header{
+    font-family: 'Mukta', sans-serif;
+    font-size: 13pt;
+    width: 100%;
+    height: 15%;
+    background-color: rgb(83, 90, 94);
+    color: white;
+}
+#header-text{
+    font-family: 'Mukta', sans-serif;
+    font-size: 30pt;
+    border: 4px solid white;
+    color: white;
+    padding: 0 35px 0 35px;
+}
+
+@media only screen and (max-width: 670px) {
+    #header-text{
+        font-size: 20pt;
+        padding: 0 10px 0 10px;
+    }
+  }
+@media only screen and (max-width: 670px) {
+    #header-text{
+        font-size: 16pt;
+        padding: 0 10px 0 10px;
+    }
+  }
+
+
+/* index */
+
+#index-main-container{
+    width: 100%;
+    height: calc(100% - 180px);
+    flex-direction: column;
+}
+
+#login-form{
+    height: 50%;
+    width: 20%;
+    display: grid;
+    grid-template-rows: 20% 25% 25% 15% 15%;
+    border:8px solid black;
+    border-radius: 20px;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 500px;
+    max-height: 500px;
+    background-color: rgb(9, 115, 236);
+}
+#login-header{
+    grid-row: 1;
+    height: 100%;
+    width: 100%;
+    border-bottom: 7px solid black;
+    font-family: 'Mukta', sans-serif;
+    font-size: 20pt;
+}
+#form-object-1{
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+#form-object-2{
+    grid-row: 3;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+}
+#form-object-3{
+    grid-row: 4;
+    height: 100%;
+    width: 100%;
+}
+#form-object-4{
+    grid-row: 5;
+    height: 100%;
+    width: 100%;
+    color: tomato;
+}
+
+#login-form input{
+    width: 200px;
+}
+#login-form label{
+    width: 204px;
+}
+
+
+#login-buttom{
+    width: 200px;
+}
+#login-buttom:hover{
+    cursor: pointer;
+}
+#separator-bottom{
+    width: 100%;
+    height: 30%
+}
+#separator-top{
+    width: 100%;
+    height: 10%
+}
+
+/* home */
+
+#home-main-container{
+    width: 100%;
+    height: calc(100% - 230px);
+    display: grid;
+    grid-template-rows: 50px calc(100% - 50px);
+}
+#home-nav{
+    width: 100%;
+    grid-row: 1;
+    display: flex;
+    justify-content: end;
+}
+#nav-object{
+    width: 150px;
+    background-color: rgb(223, 223, 223);
+    height: 100%;
+    margin-top: 2px;
+    margin-right: 1px;
+    box-shadow: 2px 2px 4px 1px black;
+    text-decoration: underline;
+    color: black;
+}
+#nav-object:hover{
+    cursor: pointer;
+}
+@media only screen and (max-width: 800px) {
+    #banner-header{
+        font-size: 8pt;
+    }
+  }
+
+footer{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    background-color: rgb(118, 117, 117);
+}
+#dinamyc-zone{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+.hover:hover{
+    cursor:pointer;
+    background-color: rgb(96, 190, 190);
+    text-decoration: none;
+    color: white;
+}
+.error_text{
+    height: 40px;
+    width: 100%;
+    font-size: 15pt;
+    color: rgb(224, 40, 8);
+}
+
+#table_selector{
+    width: 30%;
+    min-width: 300px;
+    max-width: 500px;
+    height: 70%;
+    background-color: rgb(44, 63, 70);
+    overflow: auto;
+    justify-content: center;
+    
+}
+#table_selector a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+#show_data{
+    height: calc(100% - 40px);
+    width: 100%;
+    overflow: auto;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#show_data a{
+    width: 10%;
+    text-decoration: none!important;
+    color: black;
+}
+.show-object{
+    margin-top: 10px;
+    background-color: rgb(195, 198, 198);
+    gap: 20px;
+    width: 100%;
+    height: 30px;
+}
+.show-object:hover{
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: aliceblue;
+}
+.show-block{
+    width: 250px;
+}
+#add_data{
+    height: calc(100% - 40px);
+    width: 100%;
+    overflow: auto;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.add-form-object{
+    margin-top: 10px;
+    gap: 20px;
+    width: 20%;
+    height: 30px;
+}
+#submit{
+    width: 10%;
+    margin: 20px 8% 0px 0px;
+}
+#clinical{
+    width: 250px;
+    background-color: rgb(223, 223, 223);
+    height: 50px;
+    margin-top: 2px;
+    margin-right: 1px;
+    box-shadow: 2px 2px 4px 1px black;
+    text-decoration: underline;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
