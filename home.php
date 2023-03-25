@@ -15,6 +15,7 @@ $stmt = $conn->prepare("SELECT cliente FROM clinical_histories");
 $stmt->execute();
 $clients = $stmt->fetchAll();
 $id = $_GET['id'];
+$client = $_GET['client'];
 
 ?>  
     <div id="home-main-container">
@@ -42,32 +43,33 @@ $id = $_GET['id'];
         
         }
 
-        if($id == 1){
-            
+        if($id == 1){           
         
         $stmt = $conn->prepare("select column_name from information_schema.columns where table_name = 'clinical_histories' and table_schema = 'clinical_history'");
         $stmt->execute();
         $columns = $stmt->fetchAll();
 
-        $stmt = $conn->prepare("select * from clinical_histories");
+        $stmt = $conn->prepare("select * from clinical_histories where cliente = :client_name");
+        $stmt->bindParam(":client_name", $client);
         $stmt->execute();
         $data = $stmt->fetchAll();
 
         
         $columns_name = [];
-        $id;
+
         for($i=0;$i<count($columns);$i++){
             $column_name = $columns[$i][0];
             
             array_push($columns_name, $column_name);
         }
+
         for($i=0;$i<count($columns_name);$i++){
 
             if ($columns_name[$i] == "history_text"){
                 continue;
             }
-            
-            elseif ($columns_name[$i] == "id" ) {
+
+            if ($columns_name[$i] == "id"){
                 $id = $data[0][$columns_name[$i]];
                 continue;
             }
@@ -83,7 +85,6 @@ $id = $_GET['id'];
         }
         
         echo "<div style='height:50px'></div>";
-        $location = "";
         ?>
         <div id="clinical" onclick="location.href='history.php?id=<?php echo $id ?>'"> CLINICAL HISTORY </div>
         <?php
@@ -101,6 +102,11 @@ $id = $_GET['id'];
             if($column_name == "id"){
                 continue;
             }
+
+            if ($column_name == "history_text"){
+                continue;
+            }
+
             echo "<div class='add-form-object default-flex'>";
             echo "<label for='$column_name' style='width: 100px'>$column_name</label>";
             echo "<input type='text' style='color: black' name='$column_name' required >";

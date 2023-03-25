@@ -33,14 +33,14 @@ include "includes/header.php";
     <div id="login-header" class="default-flex">AÑADIR ADMINISTRADOR</div>
         <div id="form-object-1" class="default-flex"> 
             <label for="username">Username :</label>
-            <input type="text" name="username" required>
+            <input type="text" name="username" class="black" required>
         </div>  
         <div id="form-object-2" class="default-flex"> 
             <label for="username">Password :</label>
-            <input type="text" name="password" required>
+            <input type="text" name="password" class="black" required>
         </div>
         <div id="form-object-3" class="default-flex"> 
-            <input type="submit" value="add user" id="login-buttom">
+            <input type="submit" value="add user" id="login-buttom" class="black">
         </div>  
         <div id="form-object-4" class="default-flex"><a class="link default-flex" href="home.php">volver a home</a></div>
     </form>
